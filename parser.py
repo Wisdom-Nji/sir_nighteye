@@ -1,5 +1,5 @@
 from html.parser import HTMLParser
-import request as req
+import requests as htmlRequest
 
 class customHTMLParser( HTMLParser ):
 	def handle_starttag(self, tag, attrs):
@@ -14,7 +14,7 @@ nih_search_string = "https://search.grants.nih.gov/guide/api/data?perpage=25&sor
 
 # htmlFile = open( "sample_html.html", "r")
 htmlRequest = htmlRequest.get( nih_search_string )
-print( "htmlRequest", htmlRequest )
+print( "htmlRequest", htmlRequest.text )
 
 # parser = customHTMLParser()
 # parser.feed( htmlFile.read() )
