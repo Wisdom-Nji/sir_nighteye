@@ -18,7 +18,7 @@ htmlRequest_json = htmlRequest.json()
 # print("htmlRequest", htmlRequest_json)
 
 hits = htmlRequest_json["data"]["hits"]["hits"]
-for i in hits:
+for i in range(len(hits)):
 	print( "Title ", i, ": ", hits[i]["_source"]["title"])
 	
 # parser = customHTMLParser()
