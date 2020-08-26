@@ -1,4 +1,5 @@
 from html.parser import HTMLParser
+import request as req
 
 class customHTMLParser( HTMLParser ):
 	def handle_starttag(self, tag, attrs):
@@ -9,7 +10,11 @@ class customHTMLParser( HTMLParser ):
 		print( "Encountered some data: ", data)
 
 # Study this link, will tell you how to retrieve the information
-# https://search.grants.nih.gov/guide/api/data?perpage=25&sort=reldate:desc&from=0&type=active,nosis&parentic=all&primaryic=all&activitycodes=all&doctype=all&parentfoa=all&daterange=08262020-08262020&clinicaltrials=all&fields=all&spons=true&query=
-htmlFile = open( "sample_html.html", "r")
-parser = customHTMLParser()
-parser.feed( htmlFile.read() )
+nih_search_string = "https://search.grants.nih.gov/guide/api/data?perpage=25&sort=reldate:desc&from=0&type=active,nosis&parentic=all&primaryic=all&activitycodes=all&doctype=all&parentfoa=all&daterange=08262020-08262020&clinicaltrials=all&fields=all&spons=true&query="
+
+# htmlFile = open( "sample_html.html", "r")
+htmlRequest = htmlRequest.get( nih_search_string )
+print( "htmlRequest", htmlRequest )
+
+# parser = customHTMLParser()
+# parser.feed( htmlFile.read() )
