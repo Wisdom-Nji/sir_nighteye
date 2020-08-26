@@ -17,8 +17,9 @@ htmlRequest = htmlRequest.get( nih_search_string )
 htmlRequest_json = htmlRequest.json()
 # print("htmlRequest", htmlRequest_json)
 
-hits_title = htmlRequest_json["data"]["hits"]["hits"][0]["_source"]["title"]
-print( "hits_title", hits_title )
-
+hits = htmlRequest_json["data"]["hits"]["hits"]
+for i in hits:
+	print( "Title ", i, ": ", hits[i]["_source"]["title"])
+	
 # parser = customHTMLParser()
 # parser.feed( htmlFile.read() )
