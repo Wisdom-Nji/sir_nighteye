@@ -8,5 +8,6 @@ class customHTMLParser( HTMLParser ):
 	def handle_data(self, data):
 		print( "Encountered some data: ", data)
 
+htmlFile = open( "sample_html.html", "r")
 parser = customHTMLParser()
-parser.feed("<div class=\"class_here\">div data</div>")
+parser.feed( htmlFile.read() )
