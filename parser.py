@@ -3,10 +3,10 @@ from html.parser import HTMLParser
 class customHTMLParser( HTMLParser ):
 	def handle_starttag(self, tag, attrs):
 		print( "Encountered a start tag: ", tag)
-	def handle_engtag(self, tag, attrs):
+	def handle_endtag(self, tag):
 		print( "Encountered an end tag: ", tag)
-	def handle_data(self, tag, attrs):
+	def handle_data(self, data):
 		print( "Encountered some data: ", data)
 
 parser = customHTMLParser()
-parser.feed("<div class=\"class_here\"></div>")
+parser.feed("<div class=\"class_here\">div data</div>")
