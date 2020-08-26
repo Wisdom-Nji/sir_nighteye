@@ -14,7 +14,8 @@ nih_search_string = "https://search.grants.nih.gov/guide/api/data?perpage=25&sor
 
 # htmlFile = open( "sample_html.html", "r")
 htmlRequest = htmlRequest.get( nih_search_string )
-print( "htmlRequest", htmlRequest.text )
+htmlRequest_json = htmlRequest.json()
+print( "htmlRequest", htmlRequest_json )
 
 # parser = customHTMLParser()
 # parser.feed( htmlFile.read() )
